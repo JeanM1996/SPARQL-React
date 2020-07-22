@@ -17,7 +17,8 @@ select DISTINCT ?dep ?popByDim ?date where {
     ?res gn:locatedIn ?dep. 
     VALUES ?dep {<${idDepA}> <${idDepB}>} .
     ?res j.0:quantity ?popByDim. 
-    ?res schema:observationDate ?date.
+    ?res schema:observationDate ?date1.
+    Bind(STRDT(STR(concat(substr(?date1, 4, 2), '-', substr(?date1, 1, 2), '-',substr(?date1, 7, 4))), xsd:dateTime) as ?date)
     FILTER CONTAINS (str(?res), "/${dimension}/")
 } ORDER BY ?date
 `;
