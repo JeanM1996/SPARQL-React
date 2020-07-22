@@ -11,16 +11,15 @@ PREFIX gn: <http://www.geonames.org/ontology#>
 PREFIX j.0: <https://ld.utpl.edu.ec/dataCOVID/ontology#> 
 PREFIX schema: <http://schema.org/> 
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
-select DISTINCT  ?dep ?popByDim where {  
+select DISTINCT ?dep ?popByDim ?date where {  
     ?dep rdf:type dbo:Province. 
     ?dep dbo:name ?nombrePais. 
     ?res gn:locatedIn ?dep. 
     VALUES ?dep {<${idDepA}> <${idDepB}>} .
     ?res j.0:quantity ?popByDim. 
     ?res schema:observationDate ?date.
-    FILTER CONTAINS (?date, "19/06/2020")
     FILTER CONTAINS (str(?res), "/${dimension}/")
-} GROUP BY ?dep ?popByDim
+} ORDER BY ?date
 `;
 
 const connector = sparqlConnect(queryBuilder, {

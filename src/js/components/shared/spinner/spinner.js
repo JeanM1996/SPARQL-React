@@ -8,7 +8,7 @@ export default ({ text }) => (
 		<ReactLoading
 			type="spinningBubbles"
 			delay={0}
-			color="#ee3467"
+			color="#d00b0b"
 			height={300}
 			width={300}
 			className="loading"

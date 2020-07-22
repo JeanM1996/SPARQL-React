@@ -19,7 +19,7 @@ function PageButton({ route }) {
 		<div className="mui-row page-button">
 			{previousRoute && (
 				<Link to={previousRoute} className="mui-col-md-2 centered">
-					<FloatingActionButton secondary={true}>
+					<FloatingActionButton success={true}>
 						<SkipPrevious />
 					</FloatingActionButton>
 				</Link>
@@ -29,7 +29,7 @@ function PageButton({ route }) {
 					to={nextRoute}
 					className={`mui-col-md-offset-${col} mui-col-md-2 centered`}
 				>
-					<FloatingActionButton secondary={true}>
+					<FloatingActionButton success={true}>
 						<SkipNext />
 					</FloatingActionButton>
 				</Link>

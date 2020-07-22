@@ -23,7 +23,7 @@ class AppMenu extends Component {
 				type === 'SubHeader' ? (
 					<div key={title}>
 						<Divider />
-						<Subheader style={{ color: '#ee3467', fontSize: '26px' }}>
+						<Subheader style={{ color: '#d00b0b', fontSize: '26px' }}>
 							{title}
 						</Subheader>
 					</div>
@@ -37,13 +37,14 @@ class AppMenu extends Component {
 				)
 		);
 
+
 		return (
 			<div>
 				<AppBar
 					title={<span style={{ color: '#FFFFFF' }}>LATAM COVID-19</span>}
 					iconClassNameRight="muidocs-icon-navigation-expand-more"
 					onLeftIconButtonClick={this.handleToggle}
-					style={{ backgroundColor: '#ee3467' }}
+					style={{ backgroundColor: '#d00b0b' }}
 				/>
 				<Drawer
 					ref="leftNav"

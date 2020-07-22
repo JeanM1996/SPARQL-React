@@ -3,7 +3,7 @@
 }
 
 .page-title {
-	border: 2px solid #ee3467;
+	border: 2px solid #d00b0b;
 	background-color: #ffffff;
 	color: black;
 	border-radius: 6px;
@@ -22,17 +22,17 @@
 .item,
 .item > a {
 	font-size: 30px;
-	color: #ee3467;
+	color: #d00b0b;
 }
 
 .item-title {
 	font-size: 30px;
-	color: #cc0052;
+	color: #d00b0b;
 	font-weight: bold;
 }
 
 .pink {
-	color: #ee3467;
+	color: #d00b0b;
 }
 
 .svg-pointer {

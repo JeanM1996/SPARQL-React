@@ -8,10 +8,10 @@ Requirement : install [node](https://nodejs.org/en/) and [yarn](https://yarnpkg.
 
 ```
 # Clone project
-git clone https://github.com/LOS-ESSnet/SPARQL-React.git
+https://github.com/JeanM1996/CovidLatam.git
 
 # Go to the project root
-cd SPARQL-React
+cd SPARQL
 
 # Download all the dependencies needed by the application
 yarn install

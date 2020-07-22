@@ -1,43 +1,38 @@
 import { sum } from 'js/utils/array-utils';
-import { backgroundColor } from 'js/utils/prime-colors';
+import { radarColors } from 'js/utils/prime-colors';
 
-export const buildStackedBarData = (data, depArray) => {
-	const sums = depArray.map(dep =>
-		sum(data.filter(d => d.dep === dep.id).map(d => d.popByDim))
-	);
-	const modalities = data
-		.filter(d => d.dep === depArray[0].id)
-		.map(d => d.dimLabel);
+export const buildStackedBarData = (data, depA, depB) => ({
+	labels: data.filter(d => d.dep === depA.id).map(d => d.date),
+	datasets: [
+		{
+			label: depA.label,
+			backgroundColor: radarColors[0][0],
+			borderColor: radarColors[0][1],
+			pointBackgroundColor: radarColors[0][1],
+			pointBorderColor: '#fff',
+			pointHoverBackgroundColor: '#fff',
+			pointHoverBorderColor: radarColors[0][1],
+			data: buildData(data, depA.id),
+		},
+		{
+			label: depB.label,
+			backgroundColor: radarColors[1][0],
+			borderColor: radarColors[1][1],
+			pointBackgroundColor: radarColors[1][1],
+			pointBorderColor: '#fff',
+			pointHoverBackgroundColor: '#fff',
+			pointHoverBorderColor: radarColors[1][1],
+			data: buildData(data, depB.id),
+		},
+	],
+});
 
-	return {
-		labels: depArray.map(dep => dep.label),
-		datasets: modalities.map((m, i) => ({
-			type: 'bar',
-			label: m,
-			backgroundColor: backgroundColor[i],
-			data: data
-				.filter(d => d.dimLabel === m)
-				.map((d, j) => parseFloat((d.popByDim) * 100, 10).toFixed(2)),
-		})),
-	};
+const buildData = (data, depId) => {
+	const subDataDep = data.filter(d => d.dep === depId);
+	const sumData = sum(subDataDep.map(d => d.popByDim));
+	return subDataDep.reduce((_, d) => {
+		_.push((parseFloat(d.popByDim)));
+		return _;
+	}, []);
 };
 
-export const stackedOptions = {
-	tooltips: {
-		mode: 'index',
-		intersect: false,
-	},
-	responsive: true,
-	scales: {
-		xAxes: [
-			{
-				stacked: true,
-			},
-		],
-		yAxes: [
-			{
-				stacked: true,
-			},
-		],
-	},
-};

@@ -19,13 +19,13 @@ export default class App extends Component {
 				{
 					latitude:
 						pointCoords && pointCoords.length === 1
-							? Number.parseFloat(pointCoords[0].latitude)
-							: 47,
+							? Number.parseFloat("-28.1618219")
+							: -28.1618219,
 					longitude:
 						pointCoords && pointCoords.length === 1
-							? Number.parseFloat(pointCoords[0].longitude)
-							: 6.14,
-					zoom: zoom ? Number.parseFloat(zoom, 10) : 4.5,
+							? Number.parseFloat("-84.2845149")
+							: -84.2845149,
+					zoom: zoom ? Number.parseFloat(zoom, 10) : 2.5,
 					bearing: 0,
 					pitch: 0,
 					width: 500,

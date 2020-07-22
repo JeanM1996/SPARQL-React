@@ -64,7 +64,7 @@ export const buildLegend = classes =>
 		else
 			content = ` ${D.between} ${prettyNumber(
 				classes[i - 1][0]
-			)} et ${prettyNumber(c[0])}`;
+			)} a ${prettyNumber(c[0])}`;
 		return (
 			<p key={`legend-item-${i}`}>
 				{square(c[1])}

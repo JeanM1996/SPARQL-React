@@ -1,7 +1,7 @@
 const dictionary = {
 	summary: {
 		fr: 'Sommaire',
-		en: 'Tipos de consultas',
+		en: 'LATAM COVID-19',
 	},
 	popEtabSubheader: {
 		fr: 'Populations et établissements',
@@ -40,12 +40,11 @@ const dictionary = {
 	},
 	unemployement: {
 		fr: 'Taux de chômage',
-		en: 'Unemployement rate',
+		en: 'Población total vs número de contagios',
 	},
 	unemployementDescription: {
 		fr: 'Carte du taux de chômage des 15 ans et plus par département',
-		en:
-			'Map represents unemployement rate of 15 old years and more by department',
+		en: 'Representa el porcentaje de la población que ha sido contagiada de covid 19 en función a la población total del país',
 	},
 	establishment: {
 		fr: 'établissement',
@@ -73,11 +72,11 @@ const dictionary = {
 	},
 	between: {
 		fr: 'entre',
-		en: 'between',
+		en: 'Rango entre',
 	},
 	stackedBar: {
 		fr: 'Barres empilées',
-		en: 'Stacked bars',
+		en: 'Gráfico de barras',
 	},
 	municipality: {
 		fr: 'Commune',
@@ -190,7 +189,7 @@ const dictionary = {
 	},
 	dataSource: {
 		fr: 'Source des données :',
-		en: 'Data source:',
+		en: '',
 	},
 	chooseArea: {
 		fr: 'Choisir un territoire ...',

@@ -31,7 +31,7 @@ const buildData = (data, depId) => {
 	const subDataDep = data.filter(d => d.dep === depId);
 	const sumData = sum(subDataDep.map(d => d.popByDim));
 	return subDataDep.reduce((_, d) => {
-		_.push(parseFloat((d.popByDim / sumData) * 100, 10).toFixed(2));
+		_.push((parseFloat(d.popByDim)));
 		return _;
 	}, []);
 };
